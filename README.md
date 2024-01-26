@@ -1,28 +1,67 @@
+## Descrição
+
+Este mini framework foi desenvolvido com o propósito de fornecer uma estrutura leve e flexível para pequenos e médios projetos em PHP. Projetado com simplicidade e modularidade em mente, é uma base sólida para o desenvolvimento rápido e eficiente de aplicações web.
+É uma ferramenta valiosa para desenvolvedores que buscam uma base eficiente e rápida para iniciar seus projetos em PHP.
+
+
+## Características Principais
+
+-   **Leve e Eficiente:** O foco principal é manter uma estrutura leve, garantindo desempenho otimizado para projetos de menor escala.
+    
+-   **Flexibilidade Modular:** Com uma arquitetura modular, é fácil adicionar, remover ou estender funcionalidades de acordo com as necessidades específicas do projeto.
+    
+-   **Rotas Simples:** Um sistema de roteamento simples permite a fácil definição de rotas para controladores e ações, facilitando a navegação pela aplicação.
+    
+-   **Configuração Amigável:** As configurações do aplicativo são organizadas de maneira clara, permitindo uma fácil personalização, incluindo opções para banco de dados, URL base e outras configurações cruciais.
+
 ## Instalação
-Clone este repositório ou faça o download do arquivo .zip.
 
-Após a descompactação, execute o **Composer** para instalar as dependências e gerar o autoload.
+Para começar a trabalhar com este projeto, clone este repositório para o seu ambiente local usando o seguinte comando Git:
+```sh
+git clone https://github.com/rafaelsoje/easyglide.git
+```
+Navegue até o diretório do projeto recém-clonado:
+```sh
+cd seu-projeto
+```
 
-Navegue até a pasta do projeto no *prompt/terminal* e execute o seguinte comando:
-
-> composer install
-
-Aguarde o processo de instalação.
+Execute o Composer para instalar as dependências do projeto:
+```sh
+ composer install
+```
 
 ## Configuração
-Todos os arquivos de configuração e aplicação estão localizados na pasta *src*.
 
-As configurações de Banco de Dados e URL podem ser ajustadas no arquivo 
-*src/Config.php*.
+As configurações fundamentais, incluindo aquelas relacionadas ao Banco de Dados e URL, estão disponíveis para ajuste no arquivo _src/Config.php_.
 
-É crucial configurar corretamente a constante *BASE_DIR*:
-
-> const BASE_DIR = '/**PastaDoProjeto**/public';
+```php
+const BASE_DIR = '/PastaDoProjeto/public';
+```
+É imperativo configurar corretamente a constante _BASE_DIR_. Ela define o diretório base da aplicação, sendo crucial para a correta resolução de URLs e caminhos. Certifique-se de ajustá-la conforme a estrutura específica do seu projeto.
 
 ## Uso
-Você deve acessar a pasta *public* do projeto.
 
-É recomendável criar um ***alias*** específico no servidor que direcione diretamente para a pasta *public*.
+Para interagir com a aplicação, é necessário acessar a pasta **public** do projeto. Essa pasta contém o ponto de entrada da aplicação e é essencial para garantir o correto funcionamento.
+
+Recomendamos criar um **alias** específico no servidor que direcione diretamente para a pasta _public_. Isso simplificará o acesso à aplicação e garantirá que o ponto de entrada seja devidamente reconhecido.
+
+```sh
+<VirtualHost *:80>
+    ServerName seu-domino.com
+    DocumentRoot /Caminho/Para/Seu/Projeto/public
+
+    <Directory /Caminho/Para/Seu/Projeto/public>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+```
+
 
 ## Modelo do Controller
 ```php
@@ -47,3 +86,14 @@ class Usuario extends Model {
 
 }
 ```
+## Suporte
+
+Se você descobrir algum problema relacionado à segurança, envie um e-mail para rafaelsoje@gmail.com em vez de usar o rastreador de problemas.
+
+## Créditos 
+
+- [Rafael Soje](https://github.com/rafaelsoje)
+
+## Licença
+
+Este repositório está licenciado sob a licença [MIT](https://github.com/rafaelsoje) . Sinta-se à vontade para usar o código aqui para seu próprio aprendizado e projetos. A atribuição é apreciada.
