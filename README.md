@@ -96,4 +96,4 @@ Se você descobrir algum problema relacionado à segurança, envie um e-mail par
 
 ## Licença
 
-Este repositório está licenciado sob a licença [MIT](https://github.com/rafaelsoje) . Sinta-se à vontade para usar o código aqui para seu próprio aprendizado e projetos. A atribuição é apreciada.
+Este repositório está licenciado sob a licença [MIT](https://github.com/rafaelsoje/easyglide/blob/master/LICENSE) . Sinta-se à vontade para usar o código aqui para seu próprio aprendizado e projetos. A atribuição é apreciada.
