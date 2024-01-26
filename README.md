@@ -1,25 +1,41 @@
 ## Instalação
-Você pode clonar este repositório OU baixar o .zip
+Clone este repositório ou faça o download do arquivo .zip.
 
-Ao descompactar, é necessário rodar o **composer** pra instalar as dependências e gerar o *autoload*.
+Após a descompactação, execute o **Composer** para instalar as dependências e gerar o autoload.
 
-Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
+Navegue até a pasta do projeto no *prompt/terminal* e execute o seguinte comando:
+
 > composer install
 
-Depois é só aguardar.
+Aguarde o processo de instalação.
 
 ## Configuração
-Todos os arquivos de **configuração** e aplicação estão dentro da pasta *src*.
+Todos os arquivos de configuração e aplicação estão localizados na pasta *src*.
 
-As configurações de Banco de Dados e URL estão no arquivo *src/Config.php*
+As configurações de Banco de Dados e URL podem ser ajustadas no arquivo 
+*src/Config.php*.
 
-É importante configurar corretamente a constante *BASE_DIR*:
+É crucial configurar corretamente a constante *BASE_DIR*:
+
 > const BASE_DIR = '/**PastaDoProjeto**/public';
 
 ## Uso
 Você deve acessar a pasta *public* do projeto.
 
-O ideal é criar um ***alias*** específico no servidor que direcione diretamente para a pasta *public*.
+É recomendável criar um ***alias*** específico no servidor que direcione diretamente para a pasta *public*.
+
+## Modelo do Controller
+```php
+<?php
+namespace src\controllers;
+use \core\Controller;
+
+class HomeController extends Controller {
+    public function index() {
+        $this->render('home', ['nome' => "Hello, world"]);
+    }  
+}
+```
 
 ## Modelo de MODEL
 ```php
