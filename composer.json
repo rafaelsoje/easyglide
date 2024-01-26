@@ -1,0 +1,23 @@
+{
+    "name": "rafaelsoje/easyglide",
+    "description": "a mini php framework for use in small projects",
+    "type": "project",
+    "keywords": ["php", "framework", "MVC"],
+    "homepage": "https://soje.net",
+    "authors": [
+        {
+            "name": "Rafael Soje",
+            "email": "rafaelsoje@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "clancats/hydrahon": "^1.1"
+    },
+    "autoload": {        
+        "psr-4": {
+            "core\\": "core/",
+            "src\\": "src/"
+        }
+    }
+}
