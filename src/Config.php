@@ -4,7 +4,7 @@ namespace src;
 class Config {
 
     //Base dir
-    const BASE_DIR = '/mvc/public';    
+    const BASE_DIR = '/easyglide/public';    
 
     //Data base
     const DB_DRIVER = '';
