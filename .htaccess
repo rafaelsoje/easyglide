@@ -1,3 +1,4 @@
+#Esta linha habilita o motor de reescrita
 RewriteEngine On
 
 # Redirecionar todas as solicitações para a pasta /public

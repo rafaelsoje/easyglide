@@ -1,9 +1,17 @@
+#Esta linha habilita o motor de reescrita
 RewriteEngine On
 
+# Esta diretiva desativa a listagem de diretório. Evita que usuários vejam uma lista de arquivos dentro do diretório quando não há um arquivo de índice presente
 Options -Indexes
 
+# Verifica se o arquivo solicitado não existe no servidor
 RewriteCond %{REQUEST_FILENAME} !-f
+# Verifica se o diretório solicitado não existe no servidor
 RewriteCond %{REQUEST_FILENAME} !-d
+# Verifica se o link simbólico solicitado não existe no servidor
 RewriteCond %{REQUEST_FILENAME} !-l
+
+# Esta regra de reescrita redireciona todas as solicitações para o arquivo index.php, passando a URI solicitada originalmente como um parâmetro de consulta chamado request
+# Os flags [QSA,L] garantem que a query string original seja preservada (QSA - Query String Append) e que esta seja a última regra aplicada se a condição corresponder (L - Last)
 RewriteRule ^(.*)$ index.php?request=$1 [QSA,L]
 
