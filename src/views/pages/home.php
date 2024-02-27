@@ -1,5 +1,8 @@
+<!-- Renderiza a view header -->
 <?php $render('header'); ?>
 
-<?= $nome;?>
+<!-- conteudo da página -->
+<h1>Hello, world!</h1>
 
+<!-- Renderiza a view footer -->
 <?php $render('footer'); ?>

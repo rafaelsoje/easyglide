@@ -104,6 +104,24 @@ class Usuario extends Model {
 
 }
 ```
+
+## View 
+
+view/page é onde está a representação visual de uma página em seu projeto.
+view/partials são componentes reutilizáveis que podem ser incluídos em várias páginas ou múltiplas vezes em uma única página. Eles ajudam a evitar duplicação de código e facilitam a manutenção.
+
+```php
+<!-- Renderiza a view header em /view/partials -->
+<?php $render('header'); ?>
+
+<!-- conteudo da página em view/pages -->
+<h1>Hello, world!</h1>
+
+<!-- Renderiza a view footer em /view/partials -->
+<?php $render('footer'); ?>
+```
+Você deve salvar um componente partial em /src/view/partials.
+
 ## Suporte
 
 Se você descobrir algum problema relacionado à segurança, envie um e-mail para rafaelsoje@gmail.com em vez de usar o rastreador de problemas.
