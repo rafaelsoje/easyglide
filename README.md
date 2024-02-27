@@ -32,12 +32,30 @@ Execute o Composer para instalar as dependências do projeto:
 
 ## Configuração
 
-As configurações fundamentais, incluindo aquelas relacionadas ao Banco de Dados e URL, estão disponíveis para ajuste no arquivo _src/Config.php_.
+As configurações fundamentais, incluindo aquelas relacionadas ao Banco de Dados e URL, estão disponíveis para ajuste no arquivo _src/Config.php_ e no arquivo _.env_.
 
 ```php
-const BASE_DIR = '/PastaDoProjeto/public';
+const BASE_DIR = '/PastaDoProjeto';
 ```
 É imperativo configurar corretamente a constante _BASE_DIR_. Ela define o diretório base da aplicação, sendo crucial para a correta resolução de URLs e caminhos. Certifique-se de ajustá-la conforme a estrutura específica do seu projeto.
+
+## .env
+
+ O arquivo .env está diretamente ligado à segurança e à flexibilidade na configuração do ambiente da aplicação. Você pode separar informações sensíveis do código-fonte, como credenciais de banco de dados, chaves de API e qualquer outro dado sigiloso.
+ 
+```shell
+DB_DRIVER=mysql
+DB_HOST=localhost
+DB_DATABASE=database
+DB_USER=root
+DB_PASSWORD=password
+```
+
+Para obter as variáveis de ambiente definidas no arquivo .env você pode fazer uso das funções  e superglobais.
+
+```php 
+getenv(), $_ENV ou $_SERVER.
+```
 
 ## Uso
 
@@ -48,9 +66,9 @@ Recomendamos criar um **alias** específico no servidor que direcione diretament
 ```sh
 <VirtualHost *:80>
     ServerName seu-domino.com
-    DocumentRoot /Caminho/Para/Seu/Projeto/public
+    DocumentRoot /Caminho/Para/Seu/Projeto
 
-    <Directory /Caminho/Para/Seu/Projeto/public>
+    <Directory /Caminho/Para/Seu/Projeto>
         Options Indexes FollowSymLinks
         AllowOverride All
         Require all granted

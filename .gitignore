@@ -4,6 +4,8 @@ config.php
 composer.phar
 /vendor/
 
+.env
+
 ### Linux ###
 *~
 
